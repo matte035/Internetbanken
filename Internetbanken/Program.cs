@@ -6,19 +6,16 @@ namespace Internetbanken
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Välkommen till din internetbank ! ");
-            {
-               
-            }
-              
             
+            {
+                Console.WriteLine("Välkommen till din internetbank !  Ange ditt användarnamn och din pinkod");
+            }
 
             string usersChoice = Console.ReadLine();
-            Console.WriteLine("Ange ditt användarnamn och din pinkod");
-
-   
             
+
 
         }
     }
+}
 
