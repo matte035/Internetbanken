@@ -16,11 +16,7 @@ namespace Internetbanken
             string usersChoice = Console.ReadLine();
             Console.WriteLine("Ange ditt användarnamn och din pinkod");
 
-            while (usersChoice)
-            {
-
-            }
-            }
+   
             
 
         }
