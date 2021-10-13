@@ -8,10 +8,13 @@ namespace Internetbanken
         {
              
             Console.WriteLine("Välkommen till din internetbank ! ");
-            Console.WriteLine("Vänligen ange ditt användarnamen och pinkod för att logga in");
+            Console.WriteLine("Vänligen ange ditt användarnamen");
 
             string username = Console.ReadLine();
-
+            Console.WriteLine("Ange din pinkod");
+            string password = Console.ReadLine();
+            
+            
             // Using a multi demisionell array to store my users and passwords
             string[,] users = new string[5, 2];
 
@@ -35,29 +38,55 @@ namespace Internetbanken
             {
                 for (int j = 1; j < users.GetLength(1); j++)
                 {
-                    if (users[i, 0] == username)
+                    if (users[i,0] == username)
                     {
                         Console.WriteLine("Du är inloggad " + username);
                         inloggMeny();
                     }
-                    else if (users[i, 0] != username)
+                    else if (users[j,0] !=username)
                     {
                         Console.WriteLine("Du har skrivit fel användarnamn");
-                        i++;
+                        
                     }
+                    if (users[i, 1] == password)
+                    {
+                        Console.WriteLine();
+                    }
+                    else if (users[j, 1] != password) 
+                   
+                    {
+                        Console.WriteLine();
+
+                    }
+                    
                 }
 
 
 
                 static void inloggMeny()
-                {
-                    Console.WriteLine("1. Se dina konton och saldo");
-                    Console.WriteLine("2. Överföring mellan konton");
-                    Console.WriteLine("3. Ta ut pengar");
-                    Console.WriteLine("4. Logga ut");
-                }
 
-            }
+
+                {
+                    Console.WriteLine("Du kan välja dessa alternativ");
+                    
+                    string userInputt = Console.ReadLine();
+                    switch (userInputt)
+                    {
+                        case "1. Se dina konton och saldo":
+                            break;
+
+                        case "2. Överföring mellan konton":
+                            break;
+                        case "3. Ta ut pengar":
+                            break;
+                        case "4. Logga ut":
+                            break;
+                        }
+                    Console.ReadKey();
+                    
+        }
+
+    }
 
         }
     }
