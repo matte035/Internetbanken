@@ -67,19 +67,24 @@ namespace Internetbanken
 
 
                 {
-                    Console.WriteLine("Du kan välja dessa alternativ");
-                    
-                    string userInputt = Console.ReadLine();
+                    Console.WriteLine("Du kan välja dessa alternativ \n 1- Se dina konton \n 2- Överföring mellan konton \n 3- Ta ut pengar \n 4 Logga ut");
+
+                    int  userInputt = int.Parse(Console.ReadLine());
+                   
                     switch (userInputt)
                     {
-                        case "1. Se dina konton och saldo":
+                        case 1:
+                            Console.WriteLine("Välkommen till dina konton");
                             break;
 
-                        case "2. Överföring mellan konton":
+                        case 2:
+                            Console.WriteLine("Överföring mellan konton");
                             break;
-                        case "3. Ta ut pengar":
+                        case 3:
+                            Console.WriteLine("Ta ut pengar");
                             break;
-                        case "4. Logga ut":
+                        case 4:
+                            Console.WriteLine("Logga ut");
                             break;
                         }
                     Console.ReadKey();
