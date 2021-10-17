@@ -38,24 +38,17 @@ namespace Internetbanken
             {
                 for (int j = 1; j < users.GetLength(1); j++)
                 {
-                    if (users[i,0] == username)
+                    if (users[i,0] == username && users [j,1] == password )
                     {
                         Console.WriteLine("Du är inloggad " + username);
                         inloggMeny();
                     }
-                    else if (users[j,0] !=username)
+                    else if (users[j,0] !=username && users [i, 1] == password )
                     {
                         Console.WriteLine("Du har skrivit fel användarnamn");
                         
                     }
-                    if (users[i, 1] == password)
-                    {
-                        Console.WriteLine();
-                    }
-                    else if (users[j, 1] != password) 
                    
-                    {
-                        Console.WriteLine();
 
                     }
                     
@@ -95,6 +88,6 @@ namespace Internetbanken
 
         }
     }
-}
+
 
 
