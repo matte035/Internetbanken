@@ -6,15 +6,11 @@ namespace Internetbanken
     {
         static void Main(string[] args)
         {
-             
-            Console.WriteLine("Välkommen till din internetbank ! ");
-            Console.WriteLine("Vänligen ange ditt användarnamen");
 
-            string username = Console.ReadLine();
-            Console.WriteLine("Ange din pinkod");
-            string password = Console.ReadLine();
+            Console.WriteLine("Välkommen till din internetbank ! ");
             
-            
+
+
             // Using a multi demisionell array to store my users and passwords
             string[,] users = new string[5, 2];
 
@@ -32,62 +28,100 @@ namespace Internetbanken
 
             users[4, 0] = "Philip";
             users[4, 1] = "5678";
-          
-            
+
+
+            // If the user information is true or false.
+            //bool så börjar false(ej inloggad)
+
+            //start utav loop- Tre inloggningsförsök.
+
+
+            Console.WriteLine("Vänligen ange ditt användarnamen");
+
+            string username = Console.ReadLine();
+            Console.WriteLine("Ange din pinkod");
+            string password = Console.ReadLine();
+
+
+
             for (int i = 0; i < users.GetLength(0); i++)
             {
-                for (int j = 1; j < users.GetLength(1); j++)
-                {
-                    if (users[i,0] == username && users [j,1] == password )
-                    {
-                        Console.WriteLine("Du är inloggad " + username);
-                        inloggMeny();
-                    }
-                    else if (users[j,0] !=username && users [i, 1] == password )
-                    {
-                        Console.WriteLine("Du har skrivit fel användarnamn");
-                        
-                    }
-                   
 
-                    }
-                    
+                if (users[i, 0] == username && users[i, 1] == password)
+                {
+                    Console.WriteLine("Du är inloggad " + username);
+                    inloggMeny();
                 }
+                else
+                {
+                    Console.WriteLine("Du har skrivit fel användarnamn");
+
+                }
+                //om den går genom, lägg den som true
+            }
+            // kolla om den är inloggad-true eller false
+             //avslut loop
+        }
+
+
 
 
 
                 static void inloggMeny()
 
-
                 {
                     Console.WriteLine("Du kan välja dessa alternativ \n 1- Se dina konton \n 2- Överföring mellan konton \n 3- Ta ut pengar \n 4 Logga ut");
 
-                    int  userInputt = int.Parse(Console.ReadLine());
-                   
+                    int userInputt = int.Parse(Console.ReadLine());
+
                     switch (userInputt)
                     {
                         case 1:
-                            Console.WriteLine("Välkommen till dina konton");
+                         SeKonton();
                             break;
 
                         case 2:
-                            Console.WriteLine("Överföring mellan konton");
+                    Transfer();
                             break;
                         case 3:
-                            Console.WriteLine("Ta ut pengar");
+                    Uttag();
                             break;
                         case 4:
-                            Console.WriteLine("Logga ut");
+                    UtLoggning();
                             break;
-                        }
+                    }
                     Console.ReadKey();
-                    
+
+                }
+                // Bygg funktioner se rad 99
+                // While loop som användaren kan stanna kvar i menyn. Tills användaren väljer att "Logga Ut"
+                
+                static void SeKonton()
+        {
+            Console.WriteLine("Välkommen till dina konton");
+        }
+                
+                static void Transfer()
+        {
+            Console.WriteLine("Överföring mellan konton");
         }
 
+                static void Uttag()
+        {
+            Console.WriteLine("Ta ut pengar");
+        }
+                
+        static void UtLoggning()
+        {
+            Console.WriteLine("Logga ut");
+        }
+    
     }
 
         }
-    }
+    
+
+    
 
 
 
