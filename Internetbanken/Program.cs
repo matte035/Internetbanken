@@ -33,7 +33,10 @@ namespace Internetbanken
             // If the user information is true or false.
             //bool så börjar false(ej inloggad)
 
-            //start utav loop- Tre inloggningsförsök.
+            bool checkLogIN = false;
+
+            for (int x = 0; x < 3; x++)
+            {
 
 
             Console.WriteLine("Vänligen ange ditt användarnamen");
@@ -49,18 +52,30 @@ namespace Internetbanken
 
                 if (users[i, 0] == username && users[i, 1] == password)
                 {
+                        checkLogIN = true; 
+                        
+                         
+                }
+                
+                
+            }
+                
+
+                if (checkLogIN)
+                {
                     Console.WriteLine("Du är inloggad " + username);
                     inloggMeny();
                 }
+
                 else
                 {
                     Console.WriteLine("Du har skrivit fel användarnamn");
-
                 }
-                //om den går genom, lägg den som true
+
             }
-            // kolla om den är inloggad-true eller false
-             //avslut loop
+
+            
+
         }
 
 
@@ -95,6 +110,7 @@ namespace Internetbanken
                 }
                 // Bygg funktioner se rad 99
                 // While loop som användaren kan stanna kvar i menyn. Tills användaren väljer att "Logga Ut"
+
                 
                 static void SeKonton()
         {
@@ -115,10 +131,12 @@ namespace Internetbanken
         {
             Console.WriteLine("Logga ut");
         }
-    
+
     }
 
-        }
+}
+
+ 
     
 
     
